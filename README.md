@@ -21,22 +21,24 @@ Or install it yourself as:
 
 ## Usage
 
-    class LessonProgressLevel < ActiveRecord::Base
-      extend NotActiveRecord
+```ruby
+class LessonProgressLevel < ActiveRecord::Base
+  extend NotActiveRecord
 
-      does_not_belong_to :student
-      does_not_belong_to :lesson
-      does_not_belong_to :training
-    end
+  does_not_belong_to :student
+  does_not_belong_to :lesson
+  does_not_belong_to :training
+end
 
 
-    class MyClass < ActiveRecord::Base
-      extend NotActiveRecord
+class MyClass < ActiveRecord::Base
+  extend NotActiveRecord
 
-      does_not_belong_to :user
-      does_not_have_many :users
-      does_not_have_one  :user
-      does_not_have_and_belong_to_many :users
-    end
+  does_not_belong_to :user
+  does_not_have_many :users
+  does_not_have_one  :user
+  does_not_have_and_belong_to_many :users
+end
 
-    MyClass.new.user # gives you nice and warming exception :)
+MyClass.new.user # gives you nice and warming exception :)
+```
