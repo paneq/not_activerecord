@@ -1,3 +1,3 @@
-module NotActiverecord
-  VERSION = "0.0.1"
+module NotActiveRecord
+  VERSION = "1.0.0"
 end

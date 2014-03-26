@@ -5,11 +5,11 @@ require 'not_activerecord/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "not_activerecord"
-  spec.version       = NotActiverecord::VERSION
+  spec.version       = NotActiveRecord::VERSION
   spec.authors       = ["Robert Pankowecki"]
   spec.email         = ["robert.pankowecki@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Gem which helps you in not providing associations}
+  spec.summary       = %q{does_not}
   spec.homepage      = ""
   spec.license       = "MIT"
 

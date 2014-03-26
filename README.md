@@ -1,10 +1,13 @@
-# NotActiverecord
+# NotActiveRecord
 
-TODO: Write a gem description
+Clearly express the boundaries of your AR objects for other programmers.
+
+Just because your object has `user_id` does not mean it needs to
+know anything about `user` at all.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
     gem 'not_activerecord'
 
@@ -18,12 +21,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    class LessonProgressLevel < ActiveRecord::Base
+      extend NotActiveRecord
 
-## Contributing
+      does_not_belong_to :student
+      does_not_belong_to :lesson
+      does_not_belong_to :training
+    end
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+
+    class MyClass < ActiveRecord::Base
+      extend NotActiveRecord
+
+      does_not_belong_to :user
+      does_not_have_many :users
+      does_not_have_one  :user
+      does_not_have_and_belong_to_many :users
+    end
+
+    MyClass.new.user # gives you nice and warming exception :)
